@@ -1,7 +1,7 @@
 function multerConfig(multer) {
 const storage = multer.diskStorage({
   destination: function (req, file, cb) {
-    cb(null, "images/");
+    cb(null, "../src/assets");
   },
   filename: function (req, file, cb) {
     const uniqueSuffix = Date.now();
