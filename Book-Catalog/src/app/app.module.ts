@@ -12,9 +12,9 @@ import { NavigationModule } from './navigation/navigation.module';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
     BookModule,
-    NavigationModule
+    NavigationModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
