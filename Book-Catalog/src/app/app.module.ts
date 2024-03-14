@@ -5,6 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BookModule } from './book/book-module.module';
 import { NavigationModule } from './navigation/navigation.module';
+import { AuthModule } from './auth/auth.module';
 
 @NgModule({
   declarations: [
@@ -14,6 +15,7 @@ import { NavigationModule } from './navigation/navigation.module';
     BrowserModule,
     BookModule,
     NavigationModule,
+    AuthModule,
     AppRoutingModule
   ],
   providers: [],
