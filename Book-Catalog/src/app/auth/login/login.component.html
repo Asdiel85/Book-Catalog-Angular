@@ -1,1 +1,33 @@
-<p>login works!</p>
+<section class="form-holder create login">
+    <h2 class="form-heading">Login</h2>
+    <form [formGroup]='loginForm' (ngSubmit)="submitLoginForm()">
+      <div class="input-holder">
+        <label class="required-input" for="email">Email</label>
+        <div class="input">
+          <input id="email" type="email" formControlName="email" name="email"/>
+        </div>
+        <div class="error-holder">
+          <div class="invalid-input" *ngIf="(loginForm.get('email')?.touched) &&
+        loginForm.get('email')?.errors?.['required']"> Email is Required
+          </div>
+        </div>
+      </div>
+      <div class="input-holder">
+        <label class="required-input" for="password">Password</label>
+        <div class="input">
+          <input id="password" type="password" formControlName="password" name="password"/>
+        </div>
+        <div class="error-holder">
+          <div class="invalid-input" *ngIf="(loginForm.get('password')?.touched) &&
+        loginForm.get('password')?.errors?.['required']">Password is Required
+          </div>
+        </div>
+      </div>
+      <div class="login button-holder">
+        <input class="login-button create button"
+               type="submit"
+               [disabled]="loginForm.invalid"
+               value="Login"/>
+      </div>
+    </form>
+  </section>
