@@ -5,9 +5,9 @@
             <li routerLink="/books/my-books" >My Books</li>
         </ul>
         <ul class="right-side">
-            <li >Log Out</li>
-            <li routerLink="/auth/login">Login</li>
-            <li routerLink="/auth/register"><span>Register</span>
+            <li (click) = "logout()" *ngIf="isLoggedUser()">Log Out</li>
+            <li *ngIf="!isLoggedUser()" routerLink="/auth/login">Login</li>
+            <li *ngIf="!isLoggedUser()" routerLink="/auth/register"><span>Register</span>
         </ul>
     </div>
 </nav>

@@ -2,11 +2,9 @@ const router = require('express').Router();
 const userManager = require('../managers/userManager');
 
 router.post('/register', async (req, res) => {
-  const { firstName, lastName, email, password, repeatPassword } = req.body;
+  const {email, password, repeatPassword } = req.body;
   try {
     await userManager.register({
-      firstName,
-      lastName,
       email,
       password,
       repeatPassword,
