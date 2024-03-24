@@ -7,7 +7,7 @@ const { routeGuard } = require("../middlewares/authMiddleware");
 const upload = multerConfig(multer)
 
 router.post("/create", routeGuard, upload.single("image"), async (req, res) => {
-  const { title, author, genre, description } = req.body;
+  const { title, author, genre, pages, description } = req.body;
   const image = req.file.filename;
 
   try {
@@ -16,6 +16,7 @@ router.post("/create", routeGuard, upload.single("image"), async (req, res) => {
       title,
       author,
       genre,
+      pages,
       description,
       owner: req.user._id,
     });
