@@ -1,0 +1,106 @@
+<section class="form-holder create">
+    <h2 class="form-heading">Create Volume</h2>
+    <form [formGroup]='createMyBookForm'>
+      <div>
+        <div class="input-holder">
+          <label class="required-input" for="title">Title</label>
+          <div class="input">
+            <input placeholder="Title is required" class="text-input" id="title" type="text" formControlName="title" name="title"/>
+          </div>
+          <div class="error-holder">
+            <div
+              class="invalid-input"
+              *ngIf="(createMyBookForm.get('title')?.touched) &&
+            createMyBookForm.get('title')?.errors?.['required']"
+            >
+              Title is required
+            </div>
+          </div>
+          <label class="required-input" for="authors">Authors</label>
+          <div class="authors">
+            <div class="authors-holder">
+              <div class="input">
+                <input class="text-input" placeholder="Author is required" type="text" formControlName="author">
+              </div>
+            </div>
+          </div>
+          <div class="error-holder">
+            <div
+              class="invalid-input"
+              *ngIf="(createMyBookForm.get('author')?.touched) &&
+            createMyBookForm.get('author')?.errors?.['required']"
+            >
+              Author is required
+            </div>
+          </div>
+          <label class="required-input" for="pageCount">Page Count</label>
+          <div class="input">
+            <input class="text-input" placeholder="Pages are required" id="pageCount" type="number" formControlName="pageCount" name="pageCount">
+          </div>
+          <div class="error-holder">
+            <div
+              class="invalid-input"
+              *ngIf="(createMyBookForm.get('pageCount')?.touched) &&
+            createMyBookForm.get('pageCount')?.errors?.['required']"
+            >
+           Pages are required
+            </div>
+          </div>
+          <div>
+            <label class="required-input" for="image">Image</label>
+            <div class="input">
+              <input class="text-input" placeholder="Image is required" id="image" type="text" formControlName="image" name="image">
+            </div>
+          </div>
+          <div class="error-holder">
+            <div
+              class="invalid-input"
+              *ngIf="(createMyBookForm.get('image')?.touched) &&
+            createMyBookForm.get('image')?.errors?.['required']"
+            >
+           Image is required
+            </div>
+          </div>
+          <div>
+            <label class="required-input" for="description">Description</label>
+            <div class="input">
+              <textarea placeholder="Description is required and should be between 20 and 1000 characters" class="text-input" id="description"  cols="90" rows="10" type="text" formControlName="description" name="description"></textarea>
+            </div>
+          </div>
+          <div class="error-holder">
+            <div
+              class="invalid-input"
+              *ngIf="(createMyBookForm.get('description')?.touched) &&
+            createMyBookForm.get('description')?.errors?.['required']"
+            >
+            Description is required
+            </div>
+          </div>
+          <div class="error-holder">
+            <div
+              class="invalid-input"
+              *ngIf="(createMyBookForm.get('description')?.touched) &&
+            createMyBookForm.get('description')?.errors?.['minlength']"
+            >
+            Description should be between 20 and 1000 characters
+            </div>
+          </div>
+          <div class="error-holder">
+            <div
+              class="invalid-input"
+              *ngIf="(createMyBookForm.get('description')?.touched) &&
+            createMyBookForm.get('description')?.errors?.['maxLength']"
+            >
+            Description should be between 20 and 1000 characters
+            </div>
+          </div>
+        </div>
+        <div class="button-holder">
+          <input class="button create"
+                 type="submit"
+                 [disabled]="createMyBookForm.invalid"
+                 value="Create"/>
+        </div>
+      </div>
+    </form>
+  </section>
