@@ -12,12 +12,12 @@ exports.routeGuard = async (req, res, next) => {
     try {
       token = req.headers.authorization.split(" ")[1];
 
-      const decoded = await jwt.verify(token, SECRET);
+      const decoded = await jwt.verify(JSON.parse(token), SECRET);
 
       req.user = await User.findById(decoded._id).select("-password");
       next();
     } catch (error) {
-      res.status(401).json("Not Authorized");
+      res.status(401).json(error.message);
     }
   } else {
     res.status(401).json("Not authorized no token");

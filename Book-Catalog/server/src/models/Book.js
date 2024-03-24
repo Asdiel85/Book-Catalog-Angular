@@ -14,10 +14,6 @@ const bookSchema = new mongoose.Schema(
       type: String,
       required: [true, "Author is required"],
     },
-    genre: {
-      type: String,
-      required: [true, "Genre is required"],
-    },
     pages: {
       type: Number,
       required: [true, "Pages are required"]

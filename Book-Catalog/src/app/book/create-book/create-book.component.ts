@@ -18,8 +18,16 @@ export class CreateBookComponent {
   createMyBookForm = this.fb.group({
     title: ['', [Validators.required]],
     author: ['', [Validators.required]],
-    pageCount: ['', [Validators.required]],
+    pages: ['', [Validators.required]],
     image: ['', [Validators.required]],
     description: ['', [Validators.required, Validators.minLength(20), Validators.maxLength(1000)]]
   })
+
+  submitCreateBookForm(): void {
+    const {title, author, pages, image, description} = this.createMyBookForm.value;
+     this.bookService.createBook(title!, author!, Number(pages), image!, description!).subscribe(() => {
+     })
+    // console.log(this.createMyBookForm.value);
+    
+  }
 }

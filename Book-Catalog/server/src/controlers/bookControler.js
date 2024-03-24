@@ -6,16 +6,14 @@ const { routeGuard } = require("../middlewares/authMiddleware");
 
 const upload = multerConfig(multer)
 
-router.post("/create", routeGuard, upload.single("image"), async (req, res) => {
-  const { title, author, genre, pages, description } = req.body;
-  const image = req.file.filename;
+router.post("/create", routeGuard, async (req, res) => {
+  const { title, author, pages, image, description } = req.body;
 
   try {
     const book = await bookManager.create({
       image,
       title,
       author,
-      genre,
       pages,
       description,
       owner: req.user._id,

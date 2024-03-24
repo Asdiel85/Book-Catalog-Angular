@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from '@angular/common/http'
 import { Book } from '../../types/book';
-import { BASE_URL, BOOKS } from '../../constants/constants';
+import { BASE_URL, BOOKS, CREATE } from '../../constants/constants';
 
 @Injectable({
   providedIn: 'root'
@@ -16,5 +16,8 @@ export class BookService {
 
   getSingleBook(id: string) {
     return this.http.get<Book>(`${BASE_URL}/${BOOKS}/${id}`)
+  }
+  createBook(title: string, author: string, pages: number, image: string, description: string) {
+    return this.http.post<Book>(`${BASE_URL}/${BOOKS}${CREATE}`, {title, author, pages, image, description})
   }
 }

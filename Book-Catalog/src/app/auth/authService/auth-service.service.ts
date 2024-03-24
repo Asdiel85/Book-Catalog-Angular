@@ -21,6 +21,9 @@ export class AuthService {
   getUser(): boolean {
    return !!localStorage.getItem('auth')
   }
+  getToken(): string {
+    return localStorage.getItem('auth')!
+  }
 
   logout(): void {
     return localStorage.removeItem('auth')
