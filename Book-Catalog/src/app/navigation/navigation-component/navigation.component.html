@@ -2,7 +2,8 @@
     <div class="nav-holder">
         <ul class="left-side">
           <li routerLink="/books">Home</li>
-            <li routerLink="/books/my-books" >My Books</li>
+            <li *ngIf="isLoggedUser()" routerLink="/books/my-books" >My Books</li>
+            <li *ngIf="isLoggedUser()" routerLink="/books/create-book" >Add Book</li>
         </ul>
         <ul class="right-side">
             <li (click) = "logout()" *ngIf="isLoggedUser()">Log Out</li>

@@ -1,1 +1,27 @@
-<p>current-book works!</p>
+<div class="details">
+    <h2 class="details-header">
+      {{ book.title }}
+    </h2>
+    <div class="details-cover">
+      <img *ngIf="book.image" src="{{ book.image }}" alt="book-cover" />
+      <!-- <img class="reserve-image" *ngIf="!currentVolume.volumeInfo.imageLinks?.thumbnail"
+             src="../GoogleBooks/src/assets/404.png" alt="reserve-image"> -->
+    </div>
+    <div>
+      <p class="description">
+        <span class="span">Description:</span>
+        {{ book.description }}
+      </p>
+    </div>
+    <div>
+      <p>
+        <span class="span">Pages:</span>
+        {{ book.pages }}
+      </p>
+    </div>
+    <div class="buttons">
+      <button (click)="editButtonClick()" class="button">Edit</button>
+      <button class="button">Delete</button>
+    </div>
+  </div>
+

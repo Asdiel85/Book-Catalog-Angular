@@ -20,4 +20,11 @@ export class BookService {
   createBook(title: string, author: string, pages: number, image: string, description: string) {
     return this.http.post<Book>(`${BASE_URL}/${BOOKS}${CREATE}`, {title, author, pages, image, description})
   }
+  getUserBooks(userId: string) {
+    return this.http.get<Book[]>(`${BASE_URL}/${BOOKS}/${userId}/${BOOKS}`)
+  }
+
+  editBook(id: string, title: string, author: string, pages: number, image: string, description: string) {
+    return this.http.put<Book>(`${BASE_URL}/${BOOKS}/${id}`, {title, author, pages, image, description})
+  }
 }

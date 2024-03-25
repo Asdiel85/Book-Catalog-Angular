@@ -1,10 +1,7 @@
 const router = require("express").Router();
-const multer = require('multer')
-const multerConfig = require('../config/multerConfig')
 const bookManager = require("../managers/bookManager");
 const { routeGuard } = require("../middlewares/authMiddleware");
 
-const upload = multerConfig(multer)
 
 router.post("/create", routeGuard, async (req, res) => {
   const { title, author, pages, image, description } = req.body;
@@ -60,5 +57,16 @@ router.put("/:bookId", routeGuard, async (req, res) => {
     res.status(401).json(error.message);
   }
 });
+
+router.get('/:userId/books', routeGuard, async (req, res) => {
+  try {
+    const books = await bookManager.getUserBooks(req.params.userId);
+    res.status(200).json(books)
+  } catch (error) {
+    res.status(401).json(error.message);
+  }
+})
+
+
 
 module.exports = router;

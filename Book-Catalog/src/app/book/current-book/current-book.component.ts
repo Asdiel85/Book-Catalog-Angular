@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { BookService } from '../book-service/book-service.service';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Book } from 'src/app/types/book';
 
 @Component({
@@ -12,7 +12,8 @@ export class CurrentBookComponent implements OnInit {
   book = {} as Book;
   constructor(
     private bookService: BookService,
-    private activatedRoute: ActivatedRoute
+    private activatedRoute: ActivatedRoute,
+    private router: Router
   ) {}
 
   ngOnInit(): void {
@@ -23,5 +24,8 @@ export class CurrentBookComponent implements OnInit {
         this.book = book;
       });
     });
+  }
+  editButtonClick(): void {
+    this.router.navigate(['/books/edit', this.book._id])
   }
 }

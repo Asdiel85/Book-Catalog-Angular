@@ -1,4 +1,5 @@
 const router = require('express').Router();
+const { routeGuard } = require("../middlewares/authMiddleware");
 const bookManager = require('../managers/bookManager')
 
 router.get('/', async (req, res) => {

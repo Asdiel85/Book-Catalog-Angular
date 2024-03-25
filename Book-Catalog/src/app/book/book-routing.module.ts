@@ -12,7 +12,8 @@ const routes: Routes = [{
         {path: 'my-books', component: MyBooksComponent},
         {path: 'create-book', component: CreateBookComponent},
         {path: ':bookId', component: CurrentBookComponent},
-    ]
+        {path: 'edit/:bookId', component: CreateBookComponent}
+      ]
 }];
 
 @NgModule({

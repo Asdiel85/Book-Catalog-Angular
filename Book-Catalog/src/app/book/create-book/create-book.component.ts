@@ -1,18 +1,21 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { BookService } from '../book-service/book-service.service';
+import { Book } from 'src/app/types/book';
 
 @Component({
   selector: 'app-create-book',
   templateUrl: './create-book.component.html',
   styleUrls: ['./create-book.component.css'],
 })
-export class CreateBookComponent {
+export class CreateBookComponent implements OnInit {
+  bookId: string | null = null;
   constructor(
     private fb: FormBuilder,
     private router: Router,
-    private bookService: BookService
+    private bookService: BookService,
+    private route: ActivatedRoute
   ) {}
 
   createMyBookForm = this.fb.group({
@@ -20,14 +23,60 @@ export class CreateBookComponent {
     author: ['', [Validators.required]],
     pages: ['', [Validators.required]],
     image: ['', [Validators.required]],
-    description: ['', [Validators.required, Validators.minLength(20), Validators.maxLength(1000)]]
-  })
+    description: [
+      '',
+      [
+        Validators.required,
+        Validators.minLength(20),
+        Validators.maxLength(1000),
+      ],
+    ],
+  });
 
   submitCreateBookForm(): void {
-    const {title, author, pages, image, description} = this.createMyBookForm.value;
-     this.bookService.createBook(title!, author!, Number(pages), image!, description!).subscribe(() => {
-     })
-    // console.log(this.createMyBookForm.value);
-    
+    const { title, author, pages, image, description } =
+      this.createMyBookForm.value;
+    if (!this.bookId) {
+      this.bookService
+        .createBook(title!, author!, Number(pages), image!, description!)
+        .subscribe(() => {});
+    } else {
+      this.bookService
+        .editBook(
+          this.bookId,
+          title!,
+          author!,
+          Number(pages),
+          image!,
+          description!
+        )
+        .subscribe(() => {});
+    }
+    this.router.navigate(['/books/my-books']);
+  }
+
+  ngOnInit(): void {
+    this.route.paramMap.subscribe((params) => {
+      this.bookId = params.get('bookId');
+      if (this.bookId) {
+        this.getCurrentBookInfo(this.bookId);
+      }
+    });
+  }
+
+  private getCurrentBookInfo(id: string): void {
+    this.bookService.getSingleBook(id).subscribe((book: Book) => {
+      this.populateForm(book);
+    });
+  }
+
+  private populateForm(book: Book): void {
+    this.createMyBookForm.patchValue({
+      title: book.title,
+      author: book.author,
+      pages: String(book.pages),
+      image: book.image,
+      description: book.description,
+    });
   }
 }
