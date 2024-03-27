@@ -4,15 +4,15 @@
     <div class="input-holder">
       <label class="required-input" for="email">Email</label>
       <div class="input">
-        <input id="email" type="email" formControlName="email" name="email" />
+        <input id="email" type="email" formControlName="email" name="email"/>
       </div>
       <div class="error-holder">
         <div
           class="invalid-input"
           *ngIf="(registrationForm.get('email')?.touched) &&
-        registrationForm.get('email')?.errors?.['required']"
+        registrationForm.get('email')?.errors?.['pattern']"
         >
-          Email is required
+          Invalid Email
         </div>
       </div>
     </div>

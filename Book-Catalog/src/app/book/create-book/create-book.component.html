@@ -23,14 +23,15 @@
             Title is required
           </div>
         </div>
-        <label class="required-input" for="authors">Authors</label>
         <div class="authors">
           <div class="authors-holder">
+            <label class="required-input" for="author">Authors</label>
             <div class="input">
               <input
                 class="text-input"
                 placeholder="Author is required"
                 type="text"
+                id="author"
                 name="author"
                 formControlName="author"
               />
@@ -51,7 +52,7 @@
           <input
             class="text-input"
             placeholder="Pages are required"
-            id="pageCount"
+            id="pages"
             type="number"
             formControlName="pages"
             name="pages"
@@ -136,7 +137,7 @@
           class="button create"
           type="submit"
           [disabled]="createMyBookForm.invalid"
-          value="Create"
+          [value]= "buttonValue"
         />
       </div>
     </div>

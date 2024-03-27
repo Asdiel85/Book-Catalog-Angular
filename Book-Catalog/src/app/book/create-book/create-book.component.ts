@@ -11,6 +11,7 @@ import { Book } from 'src/app/types/book';
 })
 export class CreateBookComponent implements OnInit {
   bookId: string | null = null;
+  buttonValue: string =''
   constructor(
     private fb: FormBuilder,
     private router: Router,
@@ -59,7 +60,10 @@ export class CreateBookComponent implements OnInit {
     this.route.paramMap.subscribe((params) => {
       this.bookId = params.get('bookId');
       if (this.bookId) {
+        this.buttonValue = 'Edit'
         this.getCurrentBookInfo(this.bookId);
+      } else {
+        this.buttonValue = 'Create'
       }
     });
   }
