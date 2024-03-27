@@ -12,6 +12,7 @@ import { Book } from 'src/app/types/book';
 export class CreateBookComponent implements OnInit {
   bookId: string | null = null;
   buttonValue: string =''
+  imageUrl: string | RegExp = /^(http|https):\/\//;
   constructor(
     private fb: FormBuilder,
     private router: Router,
@@ -23,7 +24,7 @@ export class CreateBookComponent implements OnInit {
     title: ['', [Validators.required]],
     author: ['', [Validators.required]],
     pages: ['', [Validators.required]],
-    image: ['', [Validators.required]],
+    image: ['', [Validators.required, Validators.pattern(this.imageUrl)]],
     description: [
       '',
       [

@@ -84,10 +84,17 @@
           <div
             class="invalid-input"
             *ngIf="(createMyBookForm.get('image')?.touched) &&
-            createMyBookForm.get('image')?.errors?.['required']"
+            createMyBookForm.get('image')?.errors?.['pattern']"
           >
-            Image is required
+            Invalid Image Url
           </div>
+          <div
+          class="invalid-input"
+          *ngIf="(createMyBookForm.get('image')?.touched) &&
+          createMyBookForm.get('image')?.errors?.['required']"
+        >
+          Image is required
+        </div>
         </div>
         <div>
           <label class="required-input" for="description">Description</label>

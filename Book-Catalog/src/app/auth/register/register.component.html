@@ -14,6 +14,13 @@
         >
           Invalid Email
         </div>
+        <div
+        class="invalid-input"
+        *ngIf="(registrationForm.get('email')?.touched) &&
+      registrationForm.get('email')?.errors?.['required']"
+      >
+       Email is required
+      </div>
       </div>
     </div>
     <div>
