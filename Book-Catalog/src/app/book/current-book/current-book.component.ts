@@ -28,4 +28,10 @@ export class CurrentBookComponent implements OnInit {
   editButtonClick(): void {
     this.router.navigate(['/books/edit', this.book._id])
   }
+
+  deleteButtonClick(): void {
+    this.bookService.deleteBook(this.book._id).subscribe(() => {
+      this.router.navigate(['/books/my-books'])
+    })
+  }
 }

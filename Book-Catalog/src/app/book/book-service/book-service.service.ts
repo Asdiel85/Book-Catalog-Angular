@@ -27,4 +27,8 @@ export class BookService {
   editBook(id: string, title: string, author: string, pages: number, image: string, description: string) {
     return this.http.put<Book>(`${BASE_URL}/${BOOKS}/${id}`, {title, author, pages, image, description})
   }
+
+  deleteBook(id: string) {
+    return this.http.delete<Book>(`${BASE_URL}/${BOOKS}/${id}`)
+  }
 }
