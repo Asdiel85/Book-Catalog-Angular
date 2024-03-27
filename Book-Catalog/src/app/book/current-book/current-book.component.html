@@ -17,7 +17,7 @@
         {{ book.pages }}
       </p>
     </div>
-    <div class="buttons">
+    <div *ngIf="isOwner" class="buttons">
       <button (click)="editButtonClick()" class="button">Edit</button>
       <button (click)="deleteButtonClick()" class="button">Delete</button>
     </div>

@@ -38,20 +38,5 @@ exports.login = async (email, password) => {
   return token;
 };
 
-exports.getUsers = () => {
-  const result = User.find();
-  return result;
-}
-
 exports.getById = (userId) => User.findById(userId);
 
-exports.updateUser = async (userId, data) => {
- const user = await User.findByIdAndUpdate(userId, data, {runValidators:true, new: true})
- await Post.updateMany({owner: user._id}, {$set: {userAvatar: user.userAvatar}})
- return await user.save()
-}
-
-exports.deleteUser = async (userId) => {
- await Post.deleteMany({owner: userId})
- await User.findByIdAndDelete(userId)
-}

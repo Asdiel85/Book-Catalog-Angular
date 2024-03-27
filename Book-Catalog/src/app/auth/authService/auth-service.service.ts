@@ -1,7 +1,8 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { AUTH, BASE_URL, LOGIN, REGISTER } from 'src/app/constants/constants';
-import { UserLogin, UserRegister } from 'src/app/types/user';
+import { Observable } from 'rxjs';
+import { AUTH, BASE_URL, LOGIN, REGISTER, USER } from 'src/app/constants/constants';
+import { User, UserLogin, UserRegister } from 'src/app/types/user';
 
 @Injectable({
   providedIn: 'root',
@@ -23,6 +24,10 @@ export class AuthService {
   }
   getToken(): string {
     return localStorage.getItem('auth')!
+  }
+
+  getloggedUserId(): Observable<string> {
+    return this.http.get<string>(`${BASE_URL}${AUTH}${USER}`)
   }
 
   logout(): void {
