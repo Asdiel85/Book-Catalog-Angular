@@ -11,7 +11,7 @@ import { Book } from 'src/app/types/book';
 })
 export class CreateBookComponent implements OnInit {
   bookId: string | null = null;
-  buttonValue: string =''
+  buttonValue: string = '';
   imageUrl: string | RegExp = /^(http|https):\/\//;
   constructor(
     private fb: FormBuilder,
@@ -23,7 +23,7 @@ export class CreateBookComponent implements OnInit {
   createMyBookForm = this.fb.group({
     title: ['', [Validators.required]],
     author: ['', [Validators.required]],
-    pages: ['', [Validators.required]],
+    pages: ['', [Validators.required, Validators.min(1)]],
     image: ['', [Validators.required, Validators.pattern(this.imageUrl)]],
     description: [
       '',
@@ -42,6 +42,7 @@ export class CreateBookComponent implements OnInit {
       this.bookService
         .createBook(title!, author!, Number(pages), image!, description!)
         .subscribe(() => {});
+      this.router.navigate(['/books/my-books']);
     } else {
       this.bookService
         .editBook(
@@ -53,18 +54,18 @@ export class CreateBookComponent implements OnInit {
           description!
         )
         .subscribe(() => {});
+      this.router.navigate(['/books', this.bookId]);
     }
-    this.router.navigate(['/books/my-books']);
   }
 
   ngOnInit(): void {
     this.route.paramMap.subscribe((params) => {
       this.bookId = params.get('bookId');
       if (this.bookId) {
-        this.buttonValue = 'Edit'
+        this.buttonValue = 'Edit';
         this.getCurrentBookInfo(this.bookId);
       } else {
-        this.buttonValue = 'Create'
+        this.buttonValue = 'Create';
       }
     });
   }
