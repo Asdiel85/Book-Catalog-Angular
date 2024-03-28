@@ -3,6 +3,7 @@ import { BookService } from '../book-service/book-service.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Book } from 'src/app/types/book';
 import { AuthService } from 'src/app/auth/authService/auth-service.service';
+import { switchMap } from 'rxjs';
 
 @Component({
   selector: 'app-current-book',
@@ -11,7 +12,7 @@ import { AuthService } from 'src/app/auth/authService/auth-service.service';
 })
 export class CurrentBookComponent implements OnInit {
   book = {} as Book;
-  userId: string | null = null;
+  id: string | '' = '';
   isOwner: boolean = false;
   constructor(
     private bookService: BookService,
@@ -22,21 +23,11 @@ export class CurrentBookComponent implements OnInit {
 
   ngOnInit(): void {
     this.activatedRoute.params.subscribe((book) => {
-      const id = book['bookId'];
-
-      this.bookService.getSingleBook(id).subscribe((book) => {
-        this.book = book;
-
-        this.authService.getloggedUserId().subscribe((id) => {
-          this.userId = id;
-
-          if (this.userId === this.book.owner) {
-            this.isOwner = true;
-          }
-        });
-      });
+      this.id = book['bookId'];
     });
+    this.getCurrentBookDetails();
   }
+
   editButtonClick(): void {
     this.router.navigate(['/books/edit', this.book._id]);
   }
@@ -45,5 +36,17 @@ export class CurrentBookComponent implements OnInit {
     this.bookService.deleteBook(this.book._id).subscribe(() => {
       this.router.navigate(['/books/my-books']);
     });
+  }
+
+  getCurrentBookDetails(): void {
+    this.bookService
+      .getSingleBook(this.id)
+      .pipe(
+        switchMap((book) => {
+          this.book = book;
+          return this.authService.getloggedUserId();
+        })
+      )
+      .subscribe((userId) => (this.isOwner = this.book.owner === userId));
   }
 }
