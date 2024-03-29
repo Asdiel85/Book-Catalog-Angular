@@ -5,9 +5,10 @@
       </button>
     </div>
     <div class="modal-body">
-      <p>{{ errorMessage }}</p>
+      <p>{{ message }}</p>
     </div>
     <div class="modal-footer">
+      <button *ngIf="confirm" type="button" class="btn btn-outline-dark" (click)="confirmButtonClick()">Confirm</button>
       <button type="button" class="btn btn-outline-dark" (click)="activeModal.close('Close click')">Close</button>
     </div>
   </div>

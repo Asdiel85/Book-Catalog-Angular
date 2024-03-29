@@ -4,6 +4,8 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { Book } from 'src/app/types/book';
 import { AuthService } from 'src/app/auth/authService/auth-service.service';
 import { switchMap } from 'rxjs';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { ErrorModalComponent } from 'src/app/shared/error-catch/components/error-modal/error-modal.component';
 
 @Component({
   selector: 'app-current-book',
@@ -18,7 +20,8 @@ export class CurrentBookComponent implements OnInit {
     private bookService: BookService,
     private activatedRoute: ActivatedRoute,
     private authService: AuthService,
-    private router: Router
+    private router: Router,
+    private ngModal: NgbModal
   ) {}
 
   ngOnInit(): void {
@@ -33,9 +36,10 @@ export class CurrentBookComponent implements OnInit {
   }
 
   deleteButtonClick(): void {
-    this.bookService.deleteBook(this.book._id).subscribe(() => {
-      this.router.navigate(['/books/my-books']);
-    });
+  const modal = this.ngModal.open(ErrorModalComponent);
+    modal.componentInstance.message = `Do you want to delete ${this.book.title}`;
+    modal.componentInstance.confirm = true;
+    modal.componentInstance.id = this.book._id;
   }
 
   getCurrentBookDetails(): void {

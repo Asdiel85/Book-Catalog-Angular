@@ -11,6 +11,7 @@ export class ErrorService {
 
   displayError(error: string): void {
     const errorModal = this.ngModal.open(ErrorModalComponent);
-    errorModal.componentInstance.errorMessage = error
+    errorModal.componentInstance.message = error
+    errorModal.componentInstance.confirm = false
   }
 }
