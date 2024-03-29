@@ -4,11 +4,11 @@ import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 import { BookService } from 'src/app/book/book-service/book-service.service';
 
 @Component({
-  selector: 'app-error-modal',
-  templateUrl: './error-modal.component.html',
-  styleUrls: ['./error-modal.component.css']
+  selector: 'app-modal',
+  templateUrl: './modal.component.html',
+  styleUrls: ['./modal.component.css']
 })
-export class ErrorModalComponent {
+export class ModalComponent {
   @Input('message') message = '' as string;
   @Input('confirm') confirm = false as boolean;
   @Input('id') id = '' as string;

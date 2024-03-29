@@ -5,7 +5,7 @@ import { Book } from 'src/app/types/book';
 import { AuthService } from 'src/app/auth/authService/auth-service.service';
 import { switchMap } from 'rxjs';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
-import { ErrorModalComponent } from 'src/app/shared/error-catch/components/error-modal/error-modal.component';
+import { ModalComponent } from 'src/app/shared/error-catch/components/modal/modal.component';
 
 @Component({
   selector: 'app-current-book',
@@ -36,7 +36,7 @@ export class CurrentBookComponent implements OnInit {
   }
 
   deleteButtonClick(): void {
-  const modal = this.ngModal.open(ErrorModalComponent);
+  const modal = this.ngModal.open(ModalComponent);
     modal.componentInstance.message = `Do you want to delete ${this.book.title}`;
     modal.componentInstance.confirm = true;
     modal.componentInstance.id = this.book._id;
