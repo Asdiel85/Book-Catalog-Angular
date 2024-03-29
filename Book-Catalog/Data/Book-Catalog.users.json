@@ -1,0 +1,30 @@
+[{
+  "_id": {
+    "$oid": "65d34fbec0338e4a312bab78"
+  },
+  "firstName": "Martin",
+  "lastName": "Hristov",
+  "email": "asdiel@abv.bg",
+  "password": "$2b$10$TAJABa4KArSp6PSceFLU7ee2BxPbKMyUu2dcr2TCZPKooUbIsyUby",
+  "createdAt": {
+    "$date": "2024-02-19T12:55:26.976Z"
+  },
+  "updatedAt": {
+    "$date": "2024-02-19T12:55:26.976Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "65fea6237c80bc30b024cd9c"
+  },
+  "email": "mghristov85@gmail.com",
+  "password": "$2b$10$acaOQp5eCLRzNHvOYeyOUeCW1apf7u8uk2rBYZ2QIds61YjLfMtmy",
+  "createdAt": {
+    "$date": "2024-03-23T09:51:31.870Z"
+  },
+  "updatedAt": {
+    "$date": "2024-03-23T09:51:31.870Z"
+  },
+  "__v": 0
+}]

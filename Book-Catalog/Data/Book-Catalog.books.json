@@ -1,0 +1,100 @@
+[{
+  "_id": {
+    "$oid": "6601530e434fe82f1cd9a414"
+  },
+  "image": "https://upload.wikimedia.org/wikipedia/en/d/dc/A_Song_of_Ice_and_Fire_book_collection_box_set_cover.jpg",
+  "title": "Game of Thrones",
+  "author": "George R.R. Martin",
+  "pages": 694,
+  "description": "The principal story chronicles the power struggle for the Iron Throne among the great Houses of Westeros following the death of King Robert in A Game of Thrones. Robert's heir apparent, the 13-year-old Joffrey, is immediately proclaimed king through the machinations of his mother, Queen Cersei Lannister. When Lord Eddard \"Ned\" Stark, Robert's closest friend and chief advisor, discovers that Joffrey and his siblings are the product of incest between Cersei and her twin brother Ser Jaime Lannister, Eddard attempts to unseat Joffrey, but is betrayed and executed for treason. In response, Robert's brothers Stannis and Renly lay separate claims to the throne.",
+  "owner": {
+    "$oid": "65d34fbec0338e4a312bab78"
+  },
+  "createdAt": {
+    "$date": "2024-03-25T10:33:50.646Z"
+  },
+  "updatedAt": {
+    "$date": "2024-03-25T15:04:33.693Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "660153ac434fe82f1cd9a41d"
+  },
+  "image": "https://upload.wikimedia.org/wikipedia/en/3/39/AClashOfKings.jpg",
+  "title": "A Clash of Kings",
+  "author": "George R.R. Martin",
+  "pages": 768,
+  "description": "With King Robert Baratheon dead, his purported son Joffrey sits on the Iron Throne. His reign is far from stable, as both of Robert's brothers, Renly and Stannis, have claimed the throne as well. Two regions attempt to secede from the realm: Robb Stark is declared \"King in the North\" while Balon Greyjoy declares himself king of the Iron Islands. The war among these contenders is dubbed the War of the Five Kings.",
+  "owner": {
+    "$oid": "65d34fbec0338e4a312bab78"
+  },
+  "createdAt": {
+    "$date": "2024-03-25T10:36:28.840Z"
+  },
+  "updatedAt": {
+    "$date": "2024-03-29T13:29:49.797Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66015440434fe82f1cd9a422"
+  },
+  "image": "https://upload.wikimedia.org/wikipedia/en/2/24/AStormOfSwords.jpg",
+  "title": "A Storm of Swords",
+  "author": "George R.R. Martin",
+  "pages": 973,
+  "description": "A Storm of Swords is the third of seven planned novels in A Song of Ice and Fire, a fantasy series by American author George R. R. Martin. It was first published on August 8, 2000, in the United Kingdom,[1] with a United States edition following in November 2000. Its publication was preceded by a novella called Path of the Dragon, which collects some of the Daenerys Targaryen chapters from the novel into a single book.",
+  "owner": {
+    "$oid": "65d34fbec0338e4a312bab78"
+  },
+  "createdAt": {
+    "$date": "2024-03-25T10:38:56.611Z"
+  },
+  "updatedAt": {
+    "$date": "2024-03-27T11:56:40.802Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6601548f434fe82f1cd9a426"
+  },
+  "image": "https://upload.wikimedia.org/wikipedia/en/a/a3/AFeastForCrows.jpg",
+  "title": "A Feast for Crows",
+  "author": "George R.R. Martin",
+  "pages": 753,
+  "description": "A Feast for Crows is the fourth of seven planned novels in the epic fantasy series A Song of Ice and Fire by American author George R. R. Martin. The novel was first published on October 17, 2005, in the United Kingdom,[1] with a United States edition following on November 8, 2005.",
+  "owner": {
+    "$oid": "65d34fbec0338e4a312bab78"
+  },
+  "createdAt": {
+    "$date": "2024-03-25T10:40:15.301Z"
+  },
+  "updatedAt": {
+    "$date": "2024-03-28T12:46:56.395Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "660154e1434fe82f1cd9a42a"
+  },
+  "image": "https://upload.wikimedia.org/wikipedia/en/5/5d/A_Dance_With_Dragons_US.jpg",
+  "title": "A Dance with Dragons",
+  "author": "George R.R. Martin",
+  "pages": 1056,
+  "description": "A Dance with Dragons is the fifth novel of seven planned in the epic fantasy series A Song of Ice and Fire by American author George R. R. Martin. In some areas, the paperback edition was published in two parts, titled Dreams and Dust and After the Feast. It was the only novel in the series to be published during the eight-season run of the HBO adaptation of the series, Game of Thrones, and runs to 1,040 pages with a word count of almost 415,000.",
+  "owner": {
+    "$oid": "65d34fbec0338e4a312bab78"
+  },
+  "createdAt": {
+    "$date": "2024-03-25T10:41:37.101Z"
+  },
+  "updatedAt": {
+    "$date": "2024-03-25T10:41:37.101Z"
+  },
+  "__v": 0
+}]
