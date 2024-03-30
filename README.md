@@ -22,17 +22,17 @@ Register
 ![Register](./Book-Catalog/ScreenShots/Register.png)
 
 Login
-![Login](./ScreenShots/Login.png)
+![Login](./Book-Catalog/ScreenShots/Login.png)
 
 Home
-![Home](./Screen-Shots/Home.PNG)
+![Home](./Book-Catalog/ScreenShots/Home.png)
 
 Add Book
-![Add-Book](./Screen-Shots/Add-Book.PNG)
+![Add-Book](./Book-Catalog/ScreenShots/Add-Book.png)
 
 Details-one
-![Details-One](./Screen-Shots/Details-Non-logged-not-owner.PNG)
+![Details-One](./Book-Catalog/ScreenShots/Details-Non-logged-not-owner.png)
 
 Details two
-![Details-two](./Screen-Shots/Owner-details-view.PNG)
+![Details-two](./Book-Catalog/ScreenShots/Owner-details-view.png)
 
