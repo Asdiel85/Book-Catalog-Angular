@@ -19,7 +19,7 @@ After registration and logging in users can create books and edit/delete their o
 
 ## Here is how Book Catalog looks:
 Register
-![Register](./Screen-Shots/Register.PNG)
+![Register](Book-Catalog/Screen-Shots/Register.PNG)
 
 Login
 ![Login](./Screen-Shots/Login.PNG)
