@@ -17,6 +17,9 @@ export class LoginComponent {
   });
 
   submitLoginForm(): void {
+    if(this.loginForm.invalid) {
+      return
+    }
     const { email, password } = this.loginForm.value;
     this.authService.login(email!, password!).subscribe((user) => {
       localStorage.setItem('auth', JSON.stringify(user));

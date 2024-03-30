@@ -30,6 +30,9 @@ export class RegisterComponent {
   );
 
   createUser(): void {
+    if (this.registrationForm.invalid) {
+      return
+    }
     const { email, password, repeatPassword } = this.registrationForm.value;
     this.authService
       .register(email!, password!, repeatPassword!)

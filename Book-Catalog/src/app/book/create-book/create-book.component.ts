@@ -36,6 +36,9 @@ export class CreateBookComponent implements OnInit {
   });
 
   submitCreateBookForm(): void {
+    if (this.createMyBookForm.invalid) {
+      return
+    }
     const { title, author, pages, image, description } =
       this.createMyBookForm.value;
     if (!this.bookId) {
