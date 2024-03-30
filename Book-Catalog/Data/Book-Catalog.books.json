@@ -97,4 +97,144 @@
     "$date": "2024-03-25T10:41:37.101Z"
   },
   "__v": 0
+},
+{
+  "_id": {
+    "$oid": "660812be954885fa02dbf3a4"
+  },
+  "image": "https://www.orangecenter.bg/media/catalog/product/cache/bdc2c78f7e06003a3c29bc34b94b23a8/p/u/puzel-harry-potter-filosofskiqt-kamuk-1000-chasti-819844012144-2.jpg",
+  "title": "Harry Potter and the Sorcerer's Stone",
+  "author": "J.K.Rowling",
+  "pages": 223,
+  "description": "Harry Potter and the Philosopher's Stone is a fantasy novel written by British author J. K. Rowling. The first novel in the Harry Potter series and Rowling's debut novel, it follows Harry Potter, a young wizard who discovers his magical heritage on his eleventh birthday, when he receives a letter of acceptance to Hogwarts School of Witchcraft and Wizardry.",
+  "owner": {
+    "$oid": "65fea6237c80bc30b024cd9c"
+  },
+  "createdAt": {
+    "$date": "2024-03-30T13:25:18.884Z"
+  },
+  "updatedAt": {
+    "$date": "2024-03-30T13:25:18.884Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "660812ff954885fa02dbf3a9"
+  },
+  "image": "https://upload.wikimedia.org/wikipedia/en/5/5c/Harry_Potter_and_the_Chamber_of_Secrets.jpg?20191031110712",
+  "title": "Harry Potter and the Chamber of Secrets",
+  "author": "J.K.Rowling",
+  "pages": 251,
+  "description": "Harry Potter and the Chamber of Secrets is a fantasy novel written by British author J. K. Rowling and the second novel in the Harry Potter series. The plot follows Harry's second year at Hogwarts School of Witchcraft and Wizardry, during which a series of messages on the walls of the school's corridors warn that the \"Chamber of Secrets\" has been opened and that the \"heir of Slytherin\" would kill all pupils who do not come from all-magical families.",
+  "owner": {
+    "$oid": "65fea6237c80bc30b024cd9c"
+  },
+  "createdAt": {
+    "$date": "2024-03-30T13:26:23.165Z"
+  },
+  "updatedAt": {
+    "$date": "2024-03-30T13:26:23.165Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66081338954885fa02dbf3ae"
+  },
+  "image": "https://upload.wikimedia.org/wikipedia/en/thumb/a/a0/Harry_Potter_and_the_Prisoner_of_Azkaban.jpg/220px-Harry_Potter_and_the_Prisoner_of_Azkaban.jpg",
+  "title": "Harry Potter and the Prisoner of Azkaban",
+  "author": "J.K.Rowling",
+  "pages": 317,
+  "description": "Harry Potter and the Prisoner of Azkaban is a fantasy novel written by British author J. K. Rowling and is the third in the Harry Potter series. The book follows Harry Potter, a young wizard, in his third year at Hogwarts School of Witchcraft and Wizardry. ",
+  "owner": {
+    "$oid": "65fea6237c80bc30b024cd9c"
+  },
+  "createdAt": {
+    "$date": "2024-03-30T13:27:20.061Z"
+  },
+  "updatedAt": {
+    "$date": "2024-03-30T13:27:20.061Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66081379954885fa02dbf3b3"
+  },
+  "image": "https://upload.wikimedia.org/wikipedia/en/thumb/b/b6/Harry_Potter_and_the_Goblet_of_Fire_cover.png/220px-Harry_Potter_and_the_Goblet_of_Fire_cover.png",
+  "title": "Harry Potter and the Goblet of Fire",
+  "author": "J.K.Rowling",
+  "pages": 636,
+  "description": "Harry Potter and the Goblet of Fire is a fantasy novel written by British author J. K. Rowling and the fourth novel in the Harry Potter series. It follows Harry Potter, a wizard in his fourth year at Hogwarts School of Witchcraft and Wizardry, and the mystery surrounding the entry of Harry's name into the Triwizard Tournament, in which he is forced to compete.",
+  "owner": {
+    "$oid": "65fea6237c80bc30b024cd9c"
+  },
+  "createdAt": {
+    "$date": "2024-03-30T13:28:25.039Z"
+  },
+  "updatedAt": {
+    "$date": "2024-03-30T13:28:25.039Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "660813aa954885fa02dbf3b8"
+  },
+  "image": "https://upload.wikimedia.org/wikipedia/en/thumb/7/70/Harry_Potter_and_the_Order_of_the_Phoenix.jpg/220px-Harry_Potter_and_the_Order_of_the_Phoenix.jpg",
+  "title": "Harry Potter and the Order of the Phoenix",
+  "author": "J.K.Rowling",
+  "pages": 766,
+  "description": "Harry Potter and the Order of the Phoenix is a fantasy novel written by British author J. K. Rowling and the fifth novel in the Harry Potter series. It follows Harry Potter's struggles through his fifth year at Hogwarts School of Witchcraft and Wizardry, including the surreptitious return of the antagonist Lord Voldemort, O.W.L. exams, and an obstructive Ministry of Magic.",
+  "owner": {
+    "$oid": "65fea6237c80bc30b024cd9c"
+  },
+  "createdAt": {
+    "$date": "2024-03-30T13:29:14.381Z"
+  },
+  "updatedAt": {
+    "$date": "2024-03-30T13:29:14.381Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "660813d0954885fa02dbf3bd"
+  },
+  "image": "https://upload.wikimedia.org/wikipedia/en/thumb/b/b5/Harry_Potter_and_the_Half-Blood_Prince_cover.png/220px-Harry_Potter_and_the_Half-Blood_Prince_cover.png",
+  "title": "Harry Potter and the Half-Blood Prince",
+  "author": "J.K.Rowling",
+  "pages": 607,
+  "description": "Harry Potter and the Half-Blood Prince is a fantasy novel written by British author J. K. Rowling and the sixth and penultimate novel in the Harry Potter series. Set during Harry Potter's sixth year at Hogwarts, the novel explores the past of the boy wizard's nemesis, Lord Voldemort, and Harry's preparations for the final battle against Voldemort alongside his headmaster and mentor Albus Dumbledore.",
+  "owner": {
+    "$oid": "65fea6237c80bc30b024cd9c"
+  },
+  "createdAt": {
+    "$date": "2024-03-30T13:29:52.556Z"
+  },
+  "updatedAt": {
+    "$date": "2024-03-30T13:29:52.556Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66081403954885fa02dbf3c2"
+  },
+  "image": "https://upload.wikimedia.org/wikipedia/en/thumb/a/a9/Harry_Potter_and_the_Deathly_Hallows.jpg/220px-Harry_Potter_and_the_Deathly_Hallows.jpg",
+  "title": "Harry Potter and the Deathly Hallows",
+  "author": "J.K.Rowling",
+  "pages": 607,
+  "description": "Harry Potter and the Deathly Hallows is a fantasy novel written by British author J. K. Rowling and the seventh and final novel in the Harry Potter series. It was released on 21 July 2007 in the United Kingdom by Bloomsbury Publishing, in the United States by Scholastic, and in Canada by Raincoast Books. The novel chronicles the events directly following Harry Potter and the Half-Blood Prince (2005) and the final confrontation between the wizards Harry Potter and Lord Voldemort.",
+  "owner": {
+    "$oid": "65fea6237c80bc30b024cd9c"
+  },
+  "createdAt": {
+    "$date": "2024-03-30T13:30:43.592Z"
+  },
+  "updatedAt": {
+    "$date": "2024-03-30T13:30:43.592Z"
+  },
+  "__v": 0
 }]
