@@ -60,26 +60,6 @@
 },
 {
   "_id": {
-    "$oid": "6601548f434fe82f1cd9a426"
-  },
-  "image": "https://upload.wikimedia.org/wikipedia/en/a/a3/AFeastForCrows.jpg",
-  "title": "A Feast for Crows",
-  "author": "George R.R. Martin",
-  "pages": 753,
-  "description": "A Feast for Crows is the fourth of seven planned novels in the epic fantasy series A Song of Ice and Fire by American author George R. R. Martin. The novel was first published on October 17, 2005, in the United Kingdom,[1] with a United States edition following on November 8, 2005.",
-  "owner": {
-    "$oid": "65d34fbec0338e4a312bab78"
-  },
-  "createdAt": {
-    "$date": "2024-03-25T10:40:15.301Z"
-  },
-  "updatedAt": {
-    "$date": "2024-03-28T12:46:56.395Z"
-  },
-  "__v": 0
-},
-{
-  "_id": {
     "$oid": "660154e1434fe82f1cd9a42a"
   },
   "image": "https://upload.wikimedia.org/wikipedia/en/5/5d/A_Dance_With_Dragons_US.jpg",
@@ -235,6 +215,26 @@
   },
   "updatedAt": {
     "$date": "2024-03-30T13:30:43.592Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66081b90954885fa02dbf465"
+  },
+  "image": "https://upload.wikimedia.org/wikipedia/en/thumb/a/a3/AFeastForCrows.jpg/220px-AFeastForCrows.jpg",
+  "title": "A Feast for Crows",
+  "author": "George R. R. Martin",
+  "pages": 753,
+  "description": "A Feast for Crows is the fourth of seven planned novels in the epic fantasy series A Song of Ice and Fire by American author George R. R. Martin. The novel was first published on October 17, 2005, in the United Kingdom,[1] with a United States edition following on November 8, 2005.[2]",
+  "owner": {
+    "$oid": "65d34fbec0338e4a312bab78"
+  },
+  "createdAt": {
+    "$date": "2024-03-30T14:02:56.500Z"
+  },
+  "updatedAt": {
+    "$date": "2024-03-30T14:02:56.500Z"
   },
   "__v": 0
 }]
