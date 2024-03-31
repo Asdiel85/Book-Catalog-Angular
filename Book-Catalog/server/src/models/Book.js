@@ -9,6 +9,7 @@ const bookSchema = new mongoose.Schema(
     title: {
       type: String,
       required: [true, "Title is required"],
+      unique: [true, 'Book exists']
     },
     author: {
       type: String,

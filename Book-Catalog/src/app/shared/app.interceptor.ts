@@ -34,6 +34,8 @@ export class AppInterceptor implements HttpInterceptor {
       catchError((err) => {
         if (err.status === 0) {
           this.errorService.displayError('Oops Something went wrong!');
+        } else if (err.error.includes('E1100')) {
+          this.errorService.displayError('Book with this title already exists')
         } else {
           this.errorService.displayError(err.error);
         }

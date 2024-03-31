@@ -45,8 +45,9 @@ export class CreateBookComponent implements OnInit {
     if (!this.bookId) {
       this.bookService
         .createBook(title!, author!, Number(pages), image!, description!)
-        .subscribe(() => {});
-      this.router.navigate(['/books/my-books']);
+        .subscribe(() => {
+          this.router.navigate(['/books/my-books']);
+        });
     } else {
       this.bookService
         .editBook(
@@ -57,8 +58,9 @@ export class CreateBookComponent implements OnInit {
           image!,
           description!
         )
-        .subscribe(() => {});
-      this.router.navigate(['/books', this.bookId]);
+        .subscribe(() => {
+          this.router.navigate(['/books', this.bookId]);
+        });
     }
   }
 
