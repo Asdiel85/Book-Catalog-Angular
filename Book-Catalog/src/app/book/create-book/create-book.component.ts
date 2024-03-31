@@ -91,11 +91,9 @@ export class CreateBookComponent implements OnInit {
   }
 
 private asyncIdValidator(): AsyncValidatorFn {
-    return (control: AbstractControl): Promise<ValidationErrors | null> | Observable<ValidationErrors | null> => {
+    return (control: AbstractControl): Observable<ValidationErrors | null> => {
       return this.bookService.checkIfBookExists(control.value).pipe(
           map(res => {
-            console.log(res);
-            
             if(res === true && !this.bookId) {
               return {asyncValidation: 'failed'};
             }

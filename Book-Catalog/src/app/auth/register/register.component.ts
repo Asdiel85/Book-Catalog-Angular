@@ -43,9 +43,11 @@ export class RegisterComponent {
   }
 
  private asyncIdValidator(): AsyncValidatorFn {
-    return (control: AbstractControl): Promise<ValidationErrors | null> | Observable<ValidationErrors | null> => {
+    return (control: AbstractControl): Observable<ValidationErrors | null> => {
       return this.authService.checkForUser(control.value).pipe(
           map(res => {
+            console.log(res);
+            
             if(res === true) {
               return {asyncValidation: 'failed'};
             }
