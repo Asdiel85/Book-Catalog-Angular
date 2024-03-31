@@ -3,7 +3,7 @@ import { BookService } from '../book-service/book-service.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Book } from 'src/app/types/book';
 import { AuthService } from 'src/app/auth/authService/auth-service.service';
-import { switchMap } from 'rxjs';
+import { concatMap } from 'rxjs';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { ModalComponent } from 'src/app/shared/error-catch/components/modal/modal.component';
 
@@ -28,6 +28,7 @@ export class CurrentBookComponent implements OnInit {
     this.activatedRoute.params.subscribe((book) => {
       this.id = book['bookId'];
     });
+   
     this.getCurrentBookDetails();
   }
 
@@ -46,8 +47,11 @@ export class CurrentBookComponent implements OnInit {
     this.bookService
       .getSingleBook(this.id)
       .pipe(
-        switchMap((book) => {
+        concatMap((book) => {
           this.book = book;
+          if(!this.book) {
+            this.router.navigate(['/404'])
+          }
           return this.authService.getloggedUserId();
         })
       )

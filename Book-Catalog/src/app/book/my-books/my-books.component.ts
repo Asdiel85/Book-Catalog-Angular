@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { BookService } from '../book-service/book-service.service';
 import { Book } from 'src/app/types/book';
 import { AuthService } from 'src/app/auth/authService/auth-service.service';
-import { Observable, switchMap } from 'rxjs';
+import { Observable, concatMap} from 'rxjs';
 
 @Component({
   selector: 'app-my-books',
@@ -24,6 +24,6 @@ export class MyBooksComponent implements OnInit {
   getMyBooks(): Observable<Book[]> {
     return this.authService
       .getloggedUserId()
-      .pipe(switchMap((id) => this.bookService.getUserBooks(id)))
+      .pipe(concatMap((id) => this.bookService.getUserBooks(id)))
   }
 }
