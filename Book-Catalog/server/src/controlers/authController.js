@@ -37,9 +37,23 @@ router.get("/user", async (req, res) => {
       const user = await jwt.verify(JSON.parse(token), SECRET);
       res.status(200).json(user._id);
     } catch (error) {
-      res.status(401).json(error.message);
+      res.status(400).json(error.message);
     }
   }
 });
+
+router.post("/user/email", async (req, res) => {
+  const {email} = req.body;
+  try {
+    const user = await userManager.checkForUser(email);
+    if(!user) {
+      res.status(200).json(false)
+    } else {
+      res.status(200).json(true)
+    }
+  } catch (error) {
+    res.status(400).json(error.message)
+  }
+})
 
 module.exports = router;

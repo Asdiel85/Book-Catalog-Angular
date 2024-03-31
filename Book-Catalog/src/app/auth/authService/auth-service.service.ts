@@ -2,7 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { AUTH, BASE_URL, LOGIN, REGISTER, USER } from 'src/app/constants/constants';
-import { User, UserLogin, UserRegister } from 'src/app/types/user';
+import { UserLogin, UserRegister } from 'src/app/types/user';
 
 @Injectable({
   providedIn: 'root',
@@ -32,5 +32,9 @@ export class AuthService {
 
   logout(): void {
     return localStorage.removeItem('auth')
+  }
+
+  checkForUser(email: string): Observable<boolean> {
+    return this.http.post<boolean>(`${BASE_URL}${AUTH}${USER}/email`, {email})
   }
 }

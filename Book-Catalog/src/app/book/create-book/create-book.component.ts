@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, Validators } from '@angular/forms';
+import { AbstractControl, AsyncValidatorFn, FormBuilder, ValidationErrors, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { BookService } from '../book-service/book-service.service';
 import { Book } from 'src/app/types/book';
+import { Observable, map } from 'rxjs';
 
 @Component({
   selector: 'app-create-book',
@@ -21,7 +22,7 @@ export class CreateBookComponent implements OnInit {
   ) {}
 
   createMyBookForm = this.fb.group({
-    title: ['', [Validators.required]],
+    title: ['', [Validators.required], [this.asyncIdValidator()]],
     author: ['', [Validators.required]],
     pages: ['', [Validators.required, Validators.min(1)]],
     image: ['', [Validators.required, Validators.pattern(this.imageUrl)]],
@@ -87,5 +88,20 @@ export class CreateBookComponent implements OnInit {
       image: book.image,
       description: book.description,
     });
+  }
+
+private asyncIdValidator(): AsyncValidatorFn {
+    return (control: AbstractControl): Promise<ValidationErrors | null> | Observable<ValidationErrors | null> => {
+      return this.bookService.checkIfBookExists(control.value).pipe(
+          map(res => {
+            console.log(res);
+            
+            if(res === true && !this.bookId) {
+              return {asyncValidation: 'failed'};
+            }
+            return null
+          })
+          ); 
+    };
   }
 }

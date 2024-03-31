@@ -22,3 +22,8 @@ exports.updateBook = (bookId, data) =>
   Book.findByIdAndUpdate(bookId, data, { runValidators: true, new: true });
 
 exports.deleteBook = (bookId) => Book.findByIdAndDelete(bookId);
+
+exports.checkIfBookExists = async (title) => {
+  const book = await Book.findOne({title});
+  return book;
+}

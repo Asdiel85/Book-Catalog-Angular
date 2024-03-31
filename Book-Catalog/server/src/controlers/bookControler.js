@@ -2,7 +2,6 @@ const router = require("express").Router();
 const bookManager = require("../managers/bookManager");
 const { routeGuard } = require("../middlewares/authMiddleware");
 
-
 router.post("/create", routeGuard, async (req, res) => {
   const { title, author, pages, image, description } = req.body;
 
@@ -58,15 +57,27 @@ router.put("/:bookId", routeGuard, async (req, res) => {
   }
 });
 
-router.get('/:userId/books', routeGuard, async (req, res) => {
+router.get("/:userId/books", routeGuard, async (req, res) => {
   try {
     const books = await bookManager.getUserBooks(req.params.userId);
-    res.status(200).json(books)
+    res.status(200).json(books);
   } catch (error) {
     res.status(401).json(error.message);
   }
+});
+
+router.post("/title", routeGuard, async (req, res) => {
+  const {title} = req.body;
+  try {
+    const book = await bookManager.checkIfBookExists(title);
+    if(!book) {
+      res.status(200).json(false)
+    } else {
+      res.status(200).json(true)
+    }
+  } catch (error) {
+    res.status(400).json(error.message);
+  }
 })
-
-
 
 module.exports = router;

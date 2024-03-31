@@ -22,6 +22,10 @@
           >
             Title is required
           </div>
+          <div class="invalid-input" *ngIf="(createMyBookForm.get('title')?.touched)&&
+          createMyBookForm.get('title')?.errors?.['asyncValidation']">
+            Book with this title already exist
+          </div>
         </div>
         <div class="authors">
           <div class="authors-holder">

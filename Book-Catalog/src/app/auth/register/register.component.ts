@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
-import { FormBuilder, Validators } from '@angular/forms';
+import { AbstractControl, AsyncValidatorFn, FormBuilder, ValidationErrors, Validators } from '@angular/forms';
 import { passwordMatch } from 'src/app/shared/directives/passwords-match';
 import { AuthService } from '../authService/auth-service.service';
 import { Router } from '@angular/router';
+import { Observable, map } from 'rxjs';
 
 @Component({
   selector: 'app-register',
@@ -20,12 +21,12 @@ export class RegisterComponent {
 
   registrationForm = this.fb.group(
     {
-      email: ['', [Validators.required, Validators.pattern(this.emailPattern)]],
+      email: ['', [Validators.required, Validators.pattern(this.emailPattern)], [this.asyncIdValidator()]],
       password: ['', [Validators.required, Validators.minLength(5)]],
       repeatPassword: ['', [Validators.required]],
     },
     {
-      validators: passwordMatch,
+      validators: passwordMatch
     }
   );
 
@@ -36,8 +37,21 @@ export class RegisterComponent {
     const { email, password, repeatPassword } = this.registrationForm.value;
     this.authService
       .register(email!, password!, repeatPassword!)
-      .subscribe((data) => {
+      .subscribe(() => {
         this.router.navigate(['/auth/login']);
       });
+  }
+
+ private asyncIdValidator(): AsyncValidatorFn {
+    return (control: AbstractControl): Promise<ValidationErrors | null> | Observable<ValidationErrors | null> => {
+      return this.authService.checkForUser(control.value).pipe(
+          map(res => {
+            if(res === true) {
+              return {asyncValidation: 'failed'};
+            }
+            return null
+          })
+          ); 
+    };
   }
 }

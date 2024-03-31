@@ -38,5 +38,8 @@ exports.login = async (email, password) => {
   return token;
 };
 
-exports.getById = (userId) => User.findById(userId);
+exports.checkForUser = async (email) => {
+  const user = await User.findOne({email});
+  return user;
+}
 

@@ -21,6 +21,10 @@
       >
        Email is required
       </div>
+      <div class="invalid-input" *ngIf="(registrationForm.get('email')?.dirty) &&
+      registrationForm.get('email')?.errors?.['asyncValidation']">
+        User with this email already exist
+      </div>
       </div>
     </div>
     <div>
