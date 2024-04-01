@@ -3,7 +3,7 @@ import { AbstractControl, AsyncValidatorFn, FormBuilder, ValidationErrors, Valid
 import { ActivatedRoute, Router } from '@angular/router';
 import { BookService } from '../book-service/book-service.service';
 import { Book } from 'src/app/types/book';
-import { Observable, delay, map } from 'rxjs';
+import { Observable, map } from 'rxjs';
 
 @Component({
   selector: 'app-create-book',

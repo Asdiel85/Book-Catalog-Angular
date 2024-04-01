@@ -4,32 +4,29 @@ import { ActivatedRoute } from '@angular/router';
 import { CurrentBookComponent } from './current-book.component';
 import { BookService } from '../book-service/book-service.service';
 import {of } from 'rxjs';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { Book } from 'src/app/types/book';
 import { By } from '@angular/platform-browser';
 
 describe('CurrentBook component', () => {
+  let component: CurrentBookComponent
   let fixture: ComponentFixture<CurrentBookComponent>;
   let mockBookService: jasmine.SpyObj<BookService>;
   beforeEach(() => {
-    let mockActivatedRoute = {
-      snapshot: {
-        paramMap: {
-          get: () => {
-            return '1';
-          },
-        },
-      },
-    };
 
     mockBookService = jasmine.createSpyObj(['getSingleBook']);
     let mockLocation = jasmine.createSpyObj(['back']);
 
     TestBed.configureTestingModule({
       declarations: [CurrentBookComponent],
+      imports: [HttpClientTestingModule],
       providers: [
         { provide: Location, useValue: mockLocation },
         { provide: BookService, useValue: mockBookService },
-        { provide: ActivatedRoute, useValue: mockActivatedRoute },
+        { provide: ActivatedRoute, useValue: {
+          params: of({id: 1})
+        } },
+        
       ],
     });
 

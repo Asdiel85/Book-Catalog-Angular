@@ -1,15 +1,12 @@
 import { Book } from "src/app/types/book"
 import { BookListComponent } from "./book-list.component";
 import { of } from "rxjs";
-import { By } from "@angular/platform-browser";
-import { BookComponent } from "../book-component/book.component";
-import { ComponentFixture } from "@angular/core/testing";
+import { BookService } from "../book-service/book-service.service";
 
 describe('BookList component', () => {
     let books: Book[];
     let component: BookListComponent;
-    let mockService: any;
-    let fixture: ComponentFixture<BookListComponent>;
+    let mockService: jasmine.SpyObj<BookService>;
 
     beforeEach(() => {
         books = [{
@@ -32,6 +29,9 @@ describe('BookList component', () => {
           mockService = jasmine.createSpyObj(['getBooks']);
           component = new BookListComponent(mockService)
     })
+    it('should create', () => {
+      expect(component).toBeTruthy();
+    });
 
     describe('Fetch data', () => {
         beforeEach(() => {

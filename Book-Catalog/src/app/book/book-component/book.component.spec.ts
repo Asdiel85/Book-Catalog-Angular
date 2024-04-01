@@ -26,6 +26,9 @@ describe('BookComponent', () => {
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
+  it('should create', () => {
+    expect(component).toBeTruthy();
+  });
 
   it('Should render book title', () => {
     component.book = book;

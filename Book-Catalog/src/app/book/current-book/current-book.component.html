@@ -1,25 +1,22 @@
 <div class="details">
-    <h2 class="details-header">
-      {{ book.title }}
-    </h2>
-    <div class="details-cover">
-      <img *ngIf="book.image" src="{{ book.image }}" alt="book-cover" />
-    </div>
-    <div>
-      <p class="description">
-        <span class="span">Description:</span>
-        {{ book.description }}
-      </p>
-    </div>
-    <div>
-      <p>
-        <span class="span">Pages:</span>
-        {{ book.pages }}
-      </p>
-    </div>
-    <div *ngIf="isOwner" class="buttons">
-      <button (click)="editButtonClick()" class="button">Edit</button>
-      <button (click)="deleteButtonClick()" class="button">Delete</button>
-    </div>
+  <h2 class="details-header">{{ book.title }}</h2>
+  <div class="details-cover">
+    <img *ngIf="book.image" src="{{ book.image }}" alt="book-cover" />
   </div>
-
+  <div>
+    <p class="description">
+      <span class="span">Description:</span>
+      {{ book.description }}
+    </p>
+  </div>
+  <div>
+    <p>
+      <span class="span">Pages:</span>
+      {{ book.pages }}
+    </p>
+  </div>
+  <div *ngIf="isOwner" class="buttons">
+    <button (click)="editButtonClick()" class="button">Edit</button>
+    <button (click)="deleteButtonClick()" class="button">Delete</button>
+  </div>
+</div>
