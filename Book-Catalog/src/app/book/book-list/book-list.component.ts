@@ -14,10 +14,10 @@ export class BookListComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.fetchBooks()
+    this.getBooks()
   }
  
-  fetchBooks(): void {
+  getBooks(): void {
     this.bookService.getBooks().subscribe(books => {
       this.books = books;
     })

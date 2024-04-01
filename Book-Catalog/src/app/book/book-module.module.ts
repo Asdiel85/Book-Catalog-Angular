@@ -17,7 +17,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     CommonModule,
     HttpClientModule,
     BookRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
   ],
   exports: []
 })
