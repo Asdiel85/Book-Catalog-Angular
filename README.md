@@ -12,6 +12,9 @@ Book Catalog is an Angular app designed for users to share books. It utilizes An
  Your Drive:\Book-Catalog-Angular\Book-Catalog\src> npm install
  Your Drive:\Book-Catalog-Angular\Book-Catalog\src> npm start
 
+ ### To run the tests, navigate to the following directory:
+ Your Drive:\Book-Catalog-Angular\Book-Catalog> npm test
+
 ## User Interface Overview
 
 Non logged in users can see all books and their details.
